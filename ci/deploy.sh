@@ -14,9 +14,6 @@ CI_BUILD_WEB_URL=${CI_BUILD_WEB_URL:-$TRAVIS_BUILD_WEB_URL}
 CI_JOB_WEB_URL=${CI_JOB_WEB_URL:-$TRAVIS_JOB_WEB_URL}
 BRANCH=${TRAVIS_BRANCH:-master}
 
-# build a DOCX file of the manuscript
-BUILD_DOCX=true
-
 # Add commit hash to the README
 OWNER_NAME="$(dirname "$REPO_SLUG")"
 REPO_NAME="$(basename "$REPO_SLUG")"
