@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://malariagen.github.io/manubot-test/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/bf782a91876ca3753890f85b82372e8b7ee404f7/" />
+  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/48669c2a8c5a1b0e0ab76cd06e19369633e53d44/" />
 
-  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/bf782a91876ca3753890f85b82372e8b7ee404f7/" />
+  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/48669c2a8c5a1b0e0ab76cd06e19369633e53d44/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/bf782a91876ca3753890f85b82372e8b7ee404f7/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/48669c2a8c5a1b0e0ab76cd06e19369633e53d44/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -103,9 +103,9 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://malariagen.github.io/manubot-test/v/bf782a91876ca3753890f85b82372e8b7ee404f7/))
+([permalink](https://malariagen.github.io/manubot-test/v/48669c2a8c5a1b0e0ab76cd06e19369633e53d44/))
 was automatically generated
-from [malariagen/manubot-test@bf782a9](https://github.com/malariagen/manubot-test/tree/bf782a91876ca3753890f85b82372e8b7ee404f7)
+from [malariagen/manubot-test@48669c2](https://github.com/malariagen/manubot-test/tree/48669c2a8c5a1b0e0ab76cd06e19369633e53d44)
 on May 28, 2020.
 </em></small>
 
