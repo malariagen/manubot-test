@@ -7,8 +7,10 @@ filters:
 - pandoc-tablenos
 - pandoc-manubot-cite
 - pandoc-citeproc
+- pantable # Added
 wrap: preserve
 metadata:
   # csl: build/assets/style.csl
-  csl: build/assets/nature.csl
+  csl: build/assets/nature.csl # From https://www.zotero.org/styles/nature
+  # csl: https://github.com/citation-style-language/styles/raw/61b34393eb1b7db87603b537ebd61e0936565e99/dependent/nature-genetics.csl
   link-citations: true
