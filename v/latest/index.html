@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="John Doe" />
   <meta name="author" content="Jane Roe" />
-  <meta name="dcterms.date" content="2020-05-30" />
+  <meta name="dcterms.date" content="2020-06-01" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Manuscript Title</title>
   <style>
@@ -91,8 +91,8 @@
   <meta name="citation_title" content="Manuscript Title" />
   <meta property="og:title" content="Manuscript Title" />
   <meta property="twitter:title" content="Manuscript Title" />
-  <meta name="dc.date" content="2020-05-30" />
-  <meta name="citation_publication_date" content="2020-05-30" />
+  <meta name="dc.date" content="2020-06-01" />
+  <meta name="citation_publication_date" content="2020-06-01" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -113,9 +113,9 @@
   <meta name="citation_fulltext_html_url" content="https://malariagen.github.io/manubot-test/" />
   <meta name="citation_pdf_url" content="https://malariagen.github.io/manubot-test/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://malariagen.github.io/manubot-test/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/" />
-  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/" />
-  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/" />
+  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/" />
+  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -136,10 +136,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/">permalink</a>)
+(<a href="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/malariagen/manubot-test/tree/9d5818cfd7a3f3083c06d17269888e9641aec647">malariagen/manubot-test@9d5818c</a>
-on May 30, 2020.
+from <a href="https://github.com/malariagen/manubot-test/tree/80323d815d0e087d22631bd3b46fce8201afe0d7">malariagen/manubot-test@80323d8</a>
+on June 1, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -371,7 +371,7 @@ White background specified to serve as a backdrop for transparent sections of th
 </tbody>
 </table>
 </div>
-<div id="tbl:e82e24a7-f06a-4589-9eda-b6b8c5e92fe2" class="tablenos">
+<div id="tbl:7eae467b-3c03-4750-951e-dad1e8d831b6" class="tablenos">
 <table>
 <caption><span>Table 3:</span> A table with merged cells using the <code>attributes</code> plugin.
 </caption>
@@ -786,9 +786,248 @@ useful for <em>warnings</em> - <a href="https://manubot.org/">manubot.org</a></s
 </tbody>
 </table>
 <ul>
-<li>See that column headings are carried onto the next page.</li>
-<li><a href="https://github.com/ickc/pantable">Pantable</a> uses [Panflute], e.g. https://github.com/ickc/pantable/blob/master/pantable/csv_to_table_markdown.py</li>
+<li>See that column headings are carried onto the next page in PDF.</li>
+<li>See column headings are squashed/wrapped in HTML, perhaps decrease font size (e.g. wrapping in <code>&lt;div style="font-size:7pt"&gt;...&lt;/div&gt;</code>)</li>
+<li>See floats wrap</li>
+<li>See Year colum is so squashed that it’s vertical!</li>
+<li><a href="https://github.com/ickc/pantable">Pantable</a> uses <a href="https://pypi.org/project/panflute/">Panflute</a>, e.g. https://github.com/ickc/pantable/blob/master/pantable/csv_to_table_markdown.py</li>
 <li>If we needed to apply custom formatting during the build, e.g. to round those floats, we could probably write our own Pandoc filter.</li>
+</ul>
+<h2 class="page_break_before" id="test-table-from-csv-file-source-with-decreased-font-size">Test table from CSV file source with decreased font size</h2>
+<ul>
+<li>Same as above, except wrapping in <code>&lt;div style="font-size:7pt"&gt;...&lt;/div&gt;</code></li>
+</ul>
+<div style="font-size:7pt">
+<table style="width:100%;">
+<caption>Samples By Country</caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 8%" />
+<col style="width: 4%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: right;">is_arabiensis</th>
+<th style="text-align: right;">is_coluzzii</th>
+<th style="text-align: right;">is_gambiae</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: right;">latitude</th>
+<th style="text-align: right;">longitude</th>
+<th style="text-align: right;">contributor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Angola</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">-8.884000000000011</td>
+<td style="text-align: right;">13.302000000000008</td>
+<td style="text-align: right;">Joao Pinto</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Burkina Faso</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: right;">157</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">11.248256756756797</td>
+<td style="text-align: right;">-4.28192905405405</td>
+<td style="text-align: right;">Nora Besansky</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cameroon</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">416</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">5.640274774774801</td>
+<td style="text-align: right;">13.536222972972988</td>
+<td style="text-align: right;">Nora Besansky</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Central African Republic</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">1994</td>
+<td style="text-align: right;">4.367000000000001</td>
+<td style="text-align: right;">18.583000000000002</td>
+<td style="text-align: right;">Alessandra della Torre</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cote d'Ivoire</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">5.8980000000000095</td>
+<td style="text-align: right;">-4.822999999999997</td>
+<td style="text-align: right;">David Weetman</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Democratic Republic of Congo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">4.282999999999999</td>
+<td style="text-align: right;">21.017000000000035</td>
+<td style="text-align: right;">David Weetman</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Equatorial Guinea</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2002</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">8.700000000000001</td>
+<td style="text-align: right;">Igor Sharakhov</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gabon</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">2000</td>
+<td style="text-align: right;">0.38400000000000023</td>
+<td style="text-align: right;">9.455000000000005</td>
+<td style="text-align: right;">Joao Pinto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gambia, The</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">13.552845878136198</td>
+<td style="text-align: right;">-15.294989247311792</td>
+<td style="text-align: right;">Martin Donnelly</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ghana</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">5.57405</td>
+<td style="text-align: right;">-0.9347799999999995</td>
+<td style="text-align: right;">David Weetman</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Guinea</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">8.84470588235294</td>
+<td style="text-align: right;">-9.757941176470567</td>
+<td style="text-align: right;">Ken Vernick</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Guinea-Bissau</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">11.942742574257442</td>
+<td style="text-align: right;">-15.496168316831659</td>
+<td style="text-align: right;">Joao Pinto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kenya</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">-3.5110000000000015</td>
+<td style="text-align: right;">39.90900000000008</td>
+<td style="text-align: right;">Janet Midega</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lab Cross</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">53.4089999999997</td>
+<td style="text-align: right;">-2.9690000000000367</td>
+<td style="text-align: right;">Martin Donnelly</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Malawi</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">-15.932999999999996</td>
+<td style="text-align: right;">34.75500000000003</td>
+<td style="text-align: right;">Martin Donnelly</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mali</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">131</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">12.01431111111115</td>
+<td style="text-align: right;">-7.824622222222243</td>
+<td style="text-align: right;">Nora Besansky</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mayotte</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">-12.85708695652174</td>
+<td style="text-align: right;">45.137434782608686</td>
+<td style="text-align: right;">Igor Sharakhov</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mozambique</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">2004</td>
+<td style="text-align: right;">-23.71599999999996</td>
+<td style="text-align: right;">35.298999999999985</td>
+<td style="text-align: right;">Joao Pinto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tanzania</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">-2.508323333333342</td>
+<td style="text-align: right;">33.85035666666663</td>
+<td style="text-align: right;">David Weetman</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uganda</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">207</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">0.2664965517241366</td>
+<td style="text-align: right;">32.59427586206877</td>
+<td style="text-align: right;">Martin Donnelly</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>This font-size change is not honoured in some local renderings of the HTML, e.g. Datalab, but does work in others, e.g. Git Pages and opening a downloaded copy of <code>index.html</code> in a Chrome, although it always seems to work in the PDF.</li>
 </ul>
 <h2 class="page_break_before" id="test-figures-from-image-sources">Test figures from image sources</h2>
 <ul>
