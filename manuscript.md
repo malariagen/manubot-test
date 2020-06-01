@@ -4,7 +4,7 @@ author-meta:
 - Jane Roe
 bibliography:
 - content/manual-references.json
-date-meta: '2020-05-30'
+date-meta: '2020-06-01'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="Manuscript Title" />
 
-  <meta name="dc.date" content="2020-05-30" />
+  <meta name="dc.date" content="2020-06-01" />
 
-  <meta name="citation_publication_date" content="2020-05-30" />
+  <meta name="citation_publication_date" content="2020-06-01" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://malariagen.github.io/manubot-test/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/" />
+  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/" />
 
-  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/" />
+  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -103,10 +103,10 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://malariagen.github.io/manubot-test/v/9d5818cfd7a3f3083c06d17269888e9641aec647/))
+([permalink](https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/))
 was automatically generated
-from [malariagen/manubot-test@9d5818c](https://github.com/malariagen/manubot-test/tree/9d5818cfd7a3f3083c06d17269888e9641aec647)
-on May 30, 2020.
+from [malariagen/manubot-test@80323d8](https://github.com/malariagen/manubot-test/tree/80323d815d0e087d22631bd3b46fce8201afe0d7)
+on June 1, 2020.
 </em></small>
 
 ## Authors
@@ -498,9 +498,31 @@ csv-kwargs:
 
 ```
 
-- See that column headings are carried onto the next page.
-- [Pantable ](https://github.com/ickc/pantable) uses [Panflute], e.g. https://github.com/ickc/pantable/blob/master/pantable/csv_to_table_markdown.py
+- See that column headings are carried onto the next page in PDF.
+- See column headings are squashed/wrapped in HTML, perhaps decrease font size (e.g. wrapping in `<div style="font-size:7pt">...</div>`)
+- See floats wrap
+- See Year colum is so squashed that it's vertical!
+- [Pantable ](https://github.com/ickc/pantable) uses [Panflute](https://pypi.org/project/panflute/), e.g. https://github.com/ickc/pantable/blob/master/pantable/csv_to_table_markdown.py
 - If we needed to apply custom formatting during the build, e.g. to round those floats, we could probably write our own Pandoc filter.
+
+
+## Test table from CSV file source with decreased font size {.page_break_before}
+
+- Same as above, except wrapping in `<div style="font-size:7pt">...</div>`
+
+<div style="font-size:7pt">
+```table
+---
+caption: 'Samples By Country'
+alignment: LRRRRRRR
+include: content/csv/by_country.csv
+csv-kwargs:
+  dialect: unix
+---
+```
+</div>
+
+- This font-size change is not honoured in some local renderings of the HTML, e.g. Datalab, but does work in others, e.g. Git Pages and opening a downloaded copy of `index.html` in a Chrome, although it always seems to work in the PDF.
 
 
 ## Test figures from image sources {.page_break_before}

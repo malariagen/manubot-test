@@ -5,6 +5,7 @@ amet
 anim
 aute
 cillum
+colum
 commodo
 consectetur
 consequat
@@ -25,6 +26,7 @@ exercitation
 fignos
 fugiat
 homozygosity
+honoured
 incididunt
 ipsum
 irure
@@ -48,10 +50,10 @@ nulla
 occaecat
 officia
 overidden
-Pandoc
+pandoc
 Pandoc’s
 Panflute
-Pantable
+pantable
 pariatur
 Pimperena
 proident
