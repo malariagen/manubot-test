@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/malariagen/manubot-test/tree/gh-pages) branch hosts the contents of this directory at <https://malariagen.github.io/manubot-test/>.
-The permalink for this webpage version is <https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/>.
+The permalink for this webpage version is <https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://malariagen.github.io/manubot-test/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`80323d815d0e087d22631bd3b46fce8201afe0d7`](https://github.com/malariagen/manubot-test/commit/80323d815d0e087d22631bd3b46fce8201afe0d7).
+[`3339ebaa1fe65cc8b754aa9e9da45afc4383c010`](https://github.com/malariagen/manubot-test/commit/3339ebaa1fe65cc8b754aa9e9da45afc4383c010).
