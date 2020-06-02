@@ -63,6 +63,7 @@ content/04.test-table-from-csv.md:25:Pandoc
 content/04.test-table-from-csv.md:25:pantable
 content/04.test-table-from-csv.md:28:csv
 content/04.test-table-from-csv.md:28:csv
+content/04.test-table-from-csv.md:29:UTF
 content/04.test-table-from-csv.md:35:csv
 content/04.test-table-from-csv.md:35:csv
 content/04.test-table-from-csv.md:36:csv
@@ -79,6 +80,12 @@ content/04.test-table-from-csv.md:60:csv
 content/04.test-table-from-csv.md:60:csv
 content/04.test-table-from-csv.md:61:csv
 content/04.test-table-from-csv.md:67:honoured
+content/04.test-table-from-csv.md:70:pantable
+content/04.test-table-from-csv.md:73:CSV
+content/04.test-table-from-csv.md:78:Pantable
+content/04.test-table-from-csv.md:97:csv
+content/04.test-table-from-csv.md:97:csv
+content/04.test-table-from-csv.md:98:csv
 content/05.test-figures.md:3:fignos
 content/05.test-figures.md:3:mislabelling
 content/05.test-figures.md:3:pandoc

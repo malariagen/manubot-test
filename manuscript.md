@@ -4,7 +4,7 @@ author-meta:
 - Jane Roe
 bibliography:
 - content/manual-references.json
-date-meta: '2020-06-01'
+date-meta: '2020-06-02'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="Manuscript Title" />
 
-  <meta name="dc.date" content="2020-06-01" />
+  <meta name="dc.date" content="2020-06-02" />
 
-  <meta name="citation_publication_date" content="2020-06-01" />
+  <meta name="citation_publication_date" content="2020-06-02" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://malariagen.github.io/manubot-test/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/" />
+  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/" />
 
-  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/" />
+  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -103,10 +103,10 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://malariagen.github.io/manubot-test/v/80323d815d0e087d22631bd3b46fce8201afe0d7/))
+([permalink](https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/))
 was automatically generated
-from [malariagen/manubot-test@80323d8](https://github.com/malariagen/manubot-test/tree/80323d815d0e087d22631bd3b46fce8201afe0d7)
-on June 1, 2020.
+from [malariagen/manubot-test@3339eba](https://github.com/malariagen/manubot-test/tree/3339ebaa1fe65cc8b754aa9e9da45afc4383c010)
+on June 2, 2020.
 </em></small>
 
 ## Authors
@@ -484,7 +484,7 @@ First row,defaulted to be header row,can be disabled
 - Alignment has been specified: `LRRRRRRR`.
 - 'Samples By Country' is the specified `caption`.
 - `dialect: unix` is passed to `csv.reader()` by way of `csv-kwargs`
-
+- `include-encoding` defaults to UTF-8
 
 ```table
 ---
@@ -522,7 +522,43 @@ csv-kwargs:
 ```
 </div>
 
-- This font-size change is not honoured in some local renderings of the HTML, e.g. Datalab, but does work in others, e.g. Git Pages and opening a downloaded copy of `index.html` in a Chrome, although it always seems to work in the PDF.
+- This font-size change is not honoured in some local renderings of the HTML, e.g. Datalab, but does work in others, e.g. GitHub Pages and opening a downloaded copy of `index.html` in a Chrome, although it always seems to work in the PDF.
+- See that the Year column is very squashed, even with decreased font size, possibly because something has to give and no preference has been given.
+  - Want some level of tighter control over table formatting, at the column level.
+    - https://github.com/ickc/pantable supports a `width` argument: `a list of relative width corresponding to the width of each columns`
+
+
+## Test table from CSV file source with decreased font size and  {.page_break_before}
+
+- Same as above, except with column widths set to 0.125 (1 / 8) each.
+
+
+Pantable docs suggest this syntax, perhaps for a different context, which will generate an error:
+```
+- width
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+```
+
+Instead syntax like this (or equivalent) appears to work:
+```
+width: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
+```
+
+<div style="font-size:7pt">
+```table
+---
+caption: 'Samples By Country'
+alignment: LRRRRRRR
+include: content/csv/by_country.csv
+csv-kwargs:
+  dialect: unix
+width: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
+---
+```
+</div>
 
 
 ## Test figures from image sources {.page_break_before}
