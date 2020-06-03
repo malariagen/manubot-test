@@ -4,7 +4,7 @@ author-meta:
 - Jane Roe
 bibliography:
 - content/manual-references.json
-date-meta: '2020-06-02'
+date-meta: '2020-06-03'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="Manuscript Title" />
 
-  <meta name="dc.date" content="2020-06-02" />
+  <meta name="dc.date" content="2020-06-03" />
 
-  <meta name="citation_publication_date" content="2020-06-02" />
+  <meta name="citation_publication_date" content="2020-06-03" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://malariagen.github.io/manubot-test/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/" />
+  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/" />
 
-  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/" />
+  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -103,10 +103,10 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://malariagen.github.io/manubot-test/v/3339ebaa1fe65cc8b754aa9e9da45afc4383c010/))
+([permalink](https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/))
 was automatically generated
-from [malariagen/manubot-test@3339eba](https://github.com/malariagen/manubot-test/tree/3339ebaa1fe65cc8b754aa9e9da45afc4383c010)
-on June 2, 2020.
+from [malariagen/manubot-test@55fac58](https://github.com/malariagen/manubot-test/tree/55fac583deafcacb33cfb1d5f3475fc110f917cc)
+on June 3, 2020.
 </em></small>
 
 ## Authors
@@ -458,7 +458,7 @@ URL citation overridden by `manual-references.json` [@url:https://github.com/man
 
 
 
-## Test table from CSV hard-coded into Markdown content {.page_break_before}
+## Table from CSV hard-coded into Markdown content {.page_break_before}
 
 Using the pantable Pandoc filter.
 
@@ -478,7 +478,7 @@ First row,defaulted to be header row,can be disabled
 ```
 
 
-## Test table from CSV file source {.page_break_before}
+## Table from CSV file source {.page_break_before}
 
 - Using the pantable Pandoc filter with the `include` option, loading from `content/csv/by_country.csv`.
 - Alignment has been specified: `LRRRRRRR`.
@@ -506,7 +506,7 @@ csv-kwargs:
 - If we needed to apply custom formatting during the build, e.g. to round those floats, we could probably write our own Pandoc filter.
 
 
-## Test table from CSV file source with decreased font size {.page_break_before}
+## Table from CSV file source with decreased font size {.page_break_before}
 
 - Same as above, except wrapping in `<div style="font-size:7pt">...</div>`
 
@@ -528,7 +528,7 @@ csv-kwargs:
     - https://github.com/ickc/pantable supports a `width` argument: `a list of relative width corresponding to the width of each columns`
 
 
-## Test table from CSV file source with decreased font size and  {.page_break_before}
+## Table from CSV file source with decreased font size and specified column widths {.page_break_before}
 
 - Same as above, except with column widths set to 0.125 (1 / 8) each.
 
@@ -560,6 +560,24 @@ width: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
 ```
 </div>
 
+
+## Table from CSV file source with styles and specified column widths {.page_break_before}
+
+- Same as above, except with styles set using the Manubot `attributes` plugin and Pandoc "divs"
+
+
+::: {style="font-size: 7pt"}
+```table
+---
+caption: 'Samples By Country'
+alignment: LRRRRRRR
+include: content/csv/by_country.csv
+csv-kwargs:
+  dialect: unix
+width: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
+---
+```
+:::
 
 ## Test figures from image sources {.page_break_before}
 
@@ -777,6 +795,56 @@ Imagine that the following two images do not contain labels **a** and **b** in t
 - In the description, the {@fig:figure-test10}{nolink=True} part (of {@fig:figure-test10}{nolink=True}a and {@fig:figure-test10}{nolink=True}b) is automatic, whereas the "a" and "b" parts are added manually, i.e. hard-coded in the Markdown.
 
 
+
+## Test plotly {.page_break_before}
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+<script>
+  var trace1 = {
+  x: [1, 2, 3, 4],
+  y: [10, 15, 13, 17],
+  mode: 'markers',
+  type: 'scatter'
+};
+
+var trace2 = {
+  x: [2, 3, 4, 5],
+  y: [16, 5, 11, 9],
+  mode: 'lines',
+  type: 'scatter'
+};
+
+var trace3 = {
+  x: [1, 2, 3, 4],
+  y: [12, 9, 15, 12],
+  mode: 'lines+markers',
+  type: 'scatter'
+};
+
+var data = [trace1, trace2, trace3];
+
+var layout = {
+  autosize: false,
+  width: 500,
+  height: 500,
+  margin: {
+    l: 50,
+    r: 50,
+    b: 100,
+    t: 100,
+    pad: 4
+  },
+  paper_bgcolor: '#ffffff',
+  plot_bgcolor: '#c7c7c7'
+};
+  
+Plotly.newPlot('myDiv', data, layout);
+</script>
+
+- See that the plot shows in HTML rendering (and is interactive) but it does not show in the PDF rendering (as a static image).
 
 ## References {.page_break_before}
 

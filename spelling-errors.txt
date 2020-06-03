@@ -50,12 +50,13 @@ nulla
 occaecat
 officia
 overidden
-pandoc
+Pandoc
 Pandoc’s
 Panflute
-pantable
+Pantable
 pariatur
 Pimperena
+plotly
 proident
 qui
 quis

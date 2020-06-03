@@ -86,6 +86,12 @@ content/04.test-table-from-csv.md:78:Pantable
 content/04.test-table-from-csv.md:97:csv
 content/04.test-table-from-csv.md:97:csv
 content/04.test-table-from-csv.md:98:csv
+content/04.test-table-from-csv.md:106:CSV
+content/04.test-table-from-csv.md:108:divs
+content/04.test-table-from-csv.md:108:Pandoc
+content/04.test-table-from-csv.md:116:csv
+content/04.test-table-from-csv.md:116:csv
+content/04.test-table-from-csv.md:117:csv
 content/05.test-figures.md:3:fignos
 content/05.test-figures.md:3:mislabelling
 content/05.test-figures.md:3:pandoc
@@ -208,3 +214,7 @@ content/05.test-figures.md:213:subfigure
 content/05.test-figures.md:214:nolink
 content/05.test-figures.md:214:nolink
 content/05.test-figures.md:214:nolink
+content/06.test-plotly.md:1:plotly
+content/06.test-plotly.md:3:plotly
+content/06.test-plotly.md:5:Plotly
+content/06.test-plotly.md:46:Plotly
