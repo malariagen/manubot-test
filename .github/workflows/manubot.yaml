@@ -63,3 +63,7 @@ jobs:
           CI_JOB_WEB_URL: https://github.com/${{ github.repository }}/runs/${{ github.run_id }}
         shell: bash --login {0}
         run: bash ci/deploy.sh
+      - name: WIP - Deploy PR Manuscript
+        if: github.event_name == 'pull_request' && !github.event.repository.fork
+        shell: bash --login {0}
+        run: bash ci/deploy-pr.sh
