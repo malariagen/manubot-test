@@ -4,7 +4,7 @@ author-meta:
 - Jane Roe
 bibliography:
 - content/manual-references.json
-date-meta: '2020-06-03'
+date-meta: '2020-06-13'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="Manuscript Title" />
 
-  <meta name="dc.date" content="2020-06-03" />
+  <meta name="dc.date" content="2020-06-13" />
 
-  <meta name="citation_publication_date" content="2020-06-03" />
+  <meta name="citation_publication_date" content="2020-06-13" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://malariagen.github.io/manubot-test/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/" />
+  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/8c17b04d4051cc2337d45fb9bb12ed4901111e6b/" />
 
-  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/" />
+  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/8c17b04d4051cc2337d45fb9bb12ed4901111e6b/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/8c17b04d4051cc2337d45fb9bb12ed4901111e6b/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -103,10 +103,10 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://malariagen.github.io/manubot-test/v/55fac583deafcacb33cfb1d5f3475fc110f917cc/))
+([permalink](https://malariagen.github.io/manubot-test/v/8c17b04d4051cc2337d45fb9bb12ed4901111e6b/))
 was automatically generated
-from [malariagen/manubot-test@55fac58](https://github.com/malariagen/manubot-test/tree/55fac583deafcacb33cfb1d5f3475fc110f917cc)
-on June 3, 2020.
+from [malariagen/manubot-test@8c17b04](https://github.com/malariagen/manubot-test/tree/8c17b04d4051cc2337d45fb9bb12ed4901111e6b)
+on June 13, 2020.
 </em></small>
 
 ## Authors
