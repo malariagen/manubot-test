@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## deploy.sh: run during a CI build to deploy TODO.
+## deploy-pr.sh: run during a CI build to deploy TODO.
 
 # Set options for extra caution & debugging
 set -o errexit \
