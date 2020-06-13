@@ -53,7 +53,7 @@ overidden
 pandoc
 Pandoc’s
 Panflute
-Pantable
+pantable
 pariatur
 Pimperena
 plotly
