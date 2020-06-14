@@ -71,6 +71,6 @@ jobs:
           CI_BUILD_WEB_URL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}/checks
           CI_JOB_WEB_URL: https://github.com/${{ github.repository }}/runs/${{ github.run_id }}
           GITHUB_PULL_REQUEST_SHA: ${{ github.event.pull_request.head.sha }}
-          GITHUB_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.head.number }}
+          GITHUB_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
         shell: bash --login {0}
         run: bash ci/deploy-pr.sh
