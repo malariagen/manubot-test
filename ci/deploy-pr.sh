@@ -9,3 +9,4 @@ set -o errexit \
 
 echo >&2 "[INFO] WIP: This event is a pull request."
 echo >&2 "[INFO] WIP: SHA $GITHUB_PULL_REQUEST_SHA"
+echo >&2 "[INFO] WIP: num $GITHUB_PULL_REQUEST_NUMBER"
