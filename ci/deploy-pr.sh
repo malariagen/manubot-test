@@ -109,18 +109,18 @@ $CI_JOB_WEB_URL
 
 
 # WIP
-webpage_ls=$(ls -la webpage/v)
-echo >&2 "[INFO] ls -la webpage/v"
-echo >&2 "$webpage_ls"
-tar -zcvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz webpage/v/latest
+webpage_ls=$(ls -la webpage/v/latest)
+echo >&2 "[INFO] ls -la webpage/v/latest"
+echo >&2 "${webpage_ls}"
+tar -zcvfh /tmp/${GITHUB_PULL_REQUEST_NUMBER}.tar.gz webpage/v/latest
 git stash
 git checkout gh-pages
 mkdir PR
-tar -zxvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz -C PR
-git add .
+tar -zxvf /tmp/${GITHUB_PULL_REQUEST_NUMBER}.tar.gz -C PR/${GITHUB_PULL_REQUEST_NUMBER}
+git add PR/${GITHUB_PULL_REQUEST_NUMBER}/*
 git_status=$(git status -u)
 echo >&2 "[INFO] git status -u"
-echo >&2 "$git_status"
+echo >&2 "${git_status}"
 git commit -m $MESSAGE
 git push
 
