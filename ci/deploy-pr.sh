@@ -79,6 +79,10 @@ fi
 #git fetch origin gh-pages:gh-pages output:output || \
 #  echo >&2 "[INFO] could not fetch gh-pages or output from origin."
 
+# Do this instead
+git fetch origin gh-pages:gh-pages || \
+  echo >&2 "[INFO] could not fetch gh-pages from origin."
+
 # Don't do this
 ## Configure versioned webpage and timestamp
 #manubot webpage \
@@ -86,6 +90,14 @@ fi
 #  --no-ots-cache \
 #  --checkout=gh-pages \
 #  --version="$COMMIT"
+
+# Do this instead
+manubot webpage \
+  --timestamp \
+  --no-ots-cache \
+  --checkout=$GITHUB_PULL_REQUEST_HEAD_REF \
+  --version="$COMMIT"
+
 
 # Commit message
 MESSAGE="\
@@ -102,10 +114,9 @@ $CI_JOB_WEB_URL
 
 
 # WIP
-manubot webpage
-webpage_ls=$(ls -la webpage/v/local)
+webpage_ls=$(ls -la webpage/v)
 echo >&2 "[INFO] WIP: webpage_ls \n$webpage_ls"
-tar -zcvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz webpage/v/local
+tar -zcvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz webpage/v/latest
 git stash
 git checkout gh-pages
 mkdir PR
