@@ -7,10 +7,10 @@ set -o errexit \
     -o nounset \
     -o pipefail
 
-echo >&2 "[INFO] WIP: This event is a pull request."
-echo >&2 "[INFO] WIP: SHA $GITHUB_PULL_REQUEST_SHA"
-echo >&2 "[INFO] WIP: num $GITHUB_PULL_REQUEST_NUMBER"
-echo >&2 "[INFO] WIP: branch $GITHUB_PULL_REQUEST_HEAD_REF"
+echo >&2 "[INFO] This event is a pull request."
+echo >&2 "[INFO] PR SHA: $GITHUB_PULL_REQUEST_SHA"
+echo >&2 "[INFO] PR #: $GITHUB_PULL_REQUEST_NUMBER"
+echo >&2 "[INFO] PR branch: $GITHUB_PULL_REQUEST_HEAD_REF"
 
 # The branch $GITHUB_PULL_REQUEST_HEAD_REF is already checked out and built
 
@@ -91,14 +91,6 @@ git fetch origin gh-pages:gh-pages || \
 #  --checkout=gh-pages \
 #  --version="$COMMIT"
 
-# Do this instead
-manubot webpage \
-  --timestamp \
-  --no-ots-cache \
-  --checkout=$GITHUB_PULL_REQUEST_HEAD_REF \
-  --version="$COMMIT"
-
-
 # Commit message
 MESSAGE="\
 $(git log --max-count=1 --format='%s')
@@ -114,15 +106,20 @@ $CI_JOB_WEB_URL
 
 
 # WIP
-webpage_ls=$(ls -la webpage/v)
-echo >&2 "[INFO] WIP: webpage_ls \n$webpage_ls"
+#webpage_ls=$(ls -la webpage/v)
+#echo >&2 "[INFO] ls -la webpage/v"
+#echo >&2 "$webpage_ls"
 tar -zcvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz webpage/v/latest
 git stash
 git checkout gh-pages
 mkdir PR
 tar -zxvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz -C PR
-git_status=$(git status)
-echo >&2 "[INFO] WIP: git_status \n$git_status"
+git add .
+#git_status=$(git status -u)
+#echo >&2 "[INFO] git status -u"
+#echo >&2 "$git_status"
+git commit -m $MESSAGE
+git push
 
 
 if [ $MANUBOT_DEPLOY_VIA_SSH = "true" ]; then
