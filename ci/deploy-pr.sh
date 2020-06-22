@@ -91,6 +91,9 @@ git fetch origin gh-pages:gh-pages || \
 #  --checkout=gh-pages \
 #  --version="$COMMIT"
 
+# Do this instead
+manubot webpage
+
 # Commit message
 MESSAGE="\
 $(git log --max-count=1 --format='%s')
@@ -106,18 +109,18 @@ $CI_JOB_WEB_URL
 
 
 # WIP
-#webpage_ls=$(ls -la webpage/v)
-#echo >&2 "[INFO] ls -la webpage/v"
-#echo >&2 "$webpage_ls"
+webpage_ls=$(ls -la webpage/v)
+echo >&2 "[INFO] ls -la webpage/v"
+echo >&2 "$webpage_ls"
 tar -zcvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz webpage/v/latest
 git stash
 git checkout gh-pages
 mkdir PR
 tar -zxvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz -C PR
 git add .
-#git_status=$(git status -u)
-#echo >&2 "[INFO] git status -u"
-#echo >&2 "$git_status"
+git_status=$(git status -u)
+echo >&2 "[INFO] git status -u"
+echo >&2 "$git_status"
 git commit -m $MESSAGE
 git push
 
