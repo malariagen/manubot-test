@@ -104,11 +104,11 @@ $CI_JOB_WEB_URL
 # WIP
 webpage_ls=$(ls -ls webpage)
 echo >&2 "[INFO] WIP: webpage_ls $webpage_ls"
-#tar -zcvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz webpage/latest
+tar -zcvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz webpage/v/latest
+git stash
 git checkout gh-pages
 mkdir PR
-touch PR/test.txt
-#tar -zxvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz -C PR
+tar -zxvf /tmp/$GITHUB_PULL_REQUEST_NUMBER.tar.gz -C PR
 git_status=$(git status)
 echo >&2 "[INFO] WIP: git_status $git_status"
 
