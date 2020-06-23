@@ -123,7 +123,7 @@ cd webpage/v/latest
 tar zcvhf /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz .
 
 # Eyeball the tarball
-ls -la /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.g
+ls -la /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz
 
 # Change dir, back to the Git repo root
 cd ../../..
