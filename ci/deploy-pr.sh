@@ -116,13 +116,12 @@ webpage_ls=$(ls -laH webpage/v/latest)
 echo >&2 "[INFO] ls -laH webpage/v/latest"
 echo >&2 "${webpage_ls}"
 
-mkdir -p /tmp
 cd webpage/v/latest
-tar -zcvfh /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz .
+tar -zcvfh ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz .
 
-tmp_ls=$(ls -la /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz)
-echo >&2 "[INFO] ls -ls /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz"
-echo >&2 "${tmp_ls}"
+tar_ls=$(ls -la ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz)
+echo >&2 "[INFO] ls -ls ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz"
+echo >&2 "${tar_ls}"
 
 cd ../../..
 
@@ -130,7 +129,7 @@ git stash
 git checkout gh-pages
 
 mkdir -p PR/${GITHUB_PULL_REQUEST_NUMBER}
-tar -zxvf /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz -C PR/${GITHUB_PULL_REQUEST_NUMBER}
+tar -zxvf ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz -C PR/${GITHUB_PULL_REQUEST_NUMBER}
 
 git add PR/${GITHUB_PULL_REQUEST_NUMBER}
 
