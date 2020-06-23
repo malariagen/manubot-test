@@ -80,6 +80,7 @@ fi
 #  echo >&2 "[INFO] could not fetch gh-pages or output from origin."
 
 # Do this instead
+git remote set-branches --add origin gh-pages
 git fetch origin gh-pages:gh-pages || \
   echo >&2 "[INFO] could not fetch gh-pages from origin."
 
