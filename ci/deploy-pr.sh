@@ -137,7 +137,7 @@ git_status=$(git status -u)
 echo >&2 "[INFO] git status -u"
 echo >&2 "${git_status}"
 
-git commit -m $MESSAGE
+git commit -m "${MESSAGE}"
 git push
 
 
