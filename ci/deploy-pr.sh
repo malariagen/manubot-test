@@ -108,41 +108,45 @@ $CI_BUILD_WEB_URL
 $CI_JOB_WEB_URL
 "
 
+# LH - June 2020
 
-# WIP
-pwd=$(pwd)
-echo >&2 "[INFO] pwd: ${pwd}"
+# Eyeball the workind dir
 pwd
 
-webpage_ls=$(ls -laH webpage/v/latest)
-echo >&2 "[INFO] ls -laH webpage/v/latest"
-echo >&2 "${webpage_ls}"
+# Eyeball the latest webpage files (-H follow symlink)
+ls -laH webpage/v/latest
 
+# Tarball the latest webpage files, store in the tmp dir
+mkdir -p /tmp
 cd webpage/v/latest
-tar zcvhf ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz .
+# NB: -f needs to be the last arg
+tar zcvhf /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz .
 
-tar_ls=$(ls -la ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz)
-echo >&2 "[INFO] ls -ls ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz"
-echo >&2 "${tar_ls}"
+# Eyeball the tarball
+ls -la /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.g
 
+# Change dir, back to the Git repo root
 cd ../../..
 
+# Clear away the changes so we can checkout the gh-pages branch without any problems
 git stash
 git checkout gh-pages
 
+# Make a new PR directory named after the PR number, and extract the tarball into it
 mkdir -p PR/${GITHUB_PULL_REQUEST_NUMBER}
-tar zxvf ~/${GITHUB_PULL_REQUEST_SHA}.tar.gz -C PR/${GITHUB_PULL_REQUEST_NUMBER}
+tar zxvf /tmp/${GITHUB_PULL_REQUEST_SHA}.tar.gz -C PR/${GITHUB_PULL_REQUEST_NUMBER}
 
+# Stage the new files for commit
 git add PR/${GITHUB_PULL_REQUEST_NUMBER}
 
-git_status=$(git status -u)
-echo >&2 "[INFO] git status -u"
-echo >&2 "${git_status}"
+# Eyeball what we're about to commit and push
+git status -u
 
-git remote -v
-
+# Commit and push the new files to the gh-pages branch origin
 git commit -m "${MESSAGE}"
 git push --set-upstream origin gh-pages
+
+# End
 
 
 if [ $MANUBOT_DEPLOY_VIA_SSH = "true" ]; then
