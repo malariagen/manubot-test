@@ -218,3 +218,4 @@ content/06.test-plotly.md:1:plotly
 content/06.test-plotly.md:3:plotly
 content/06.test-plotly.md:5:Plotly
 content/06.test-plotly.md:46:Plotly
+content/07.test-PR-deploy.md:1:baz

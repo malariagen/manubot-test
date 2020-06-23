@@ -4,7 +4,7 @@ author-meta:
 - Jane Roe
 bibliography:
 - content/manual-references.json
-date-meta: '2020-06-13'
+date-meta: '2020-06-23'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="Manuscript Title" />
 
-  <meta name="dc.date" content="2020-06-13" />
+  <meta name="dc.date" content="2020-06-23" />
 
-  <meta name="citation_publication_date" content="2020-06-13" />
+  <meta name="citation_publication_date" content="2020-06-23" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://malariagen.github.io/manubot-test/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/1ef6839f4e4a478578fb50400962af00366ff474/" />
+  <link rel="alternate" type="text/html" href="https://malariagen.github.io/manubot-test/v/5faecccf2b69867f77742b4ef0ba39801688590d/" />
 
-  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/1ef6839f4e4a478578fb50400962af00366ff474/" />
+  <meta name="manubot_html_url_versioned" content="https://malariagen.github.io/manubot-test/v/5faecccf2b69867f77742b4ef0ba39801688590d/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/1ef6839f4e4a478578fb50400962af00366ff474/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://malariagen.github.io/manubot-test/v/5faecccf2b69867f77742b4ef0ba39801688590d/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -103,10 +103,10 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://malariagen.github.io/manubot-test/v/1ef6839f4e4a478578fb50400962af00366ff474/))
+([permalink](https://malariagen.github.io/manubot-test/v/5faecccf2b69867f77742b4ef0ba39801688590d/))
 was automatically generated
-from [malariagen/manubot-test@1ef6839](https://github.com/malariagen/manubot-test/tree/1ef6839f4e4a478578fb50400962af00366ff474)
-on June 13, 2020.
+from [malariagen/manubot-test@5faeccc](https://github.com/malariagen/manubot-test/tree/5faecccf2b69867f77742b4ef0ba39801688590d)
+on June 23, 2020.
 </em></small>
 
 ## Authors
@@ -845,6 +845,13 @@ Plotly.newPlot('myDiv', data, layout);
 </script>
 
 - See that the plot shows in HTML rendering (and is interactive) but it does not show in the PDF rendering (as a static image).
+
+## Foo bar baz
+
+test 123
+
+
+
 
 ## References {.page_break_before}
 
