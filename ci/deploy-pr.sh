@@ -9,7 +9,7 @@ set -o errexit \
 
 echo >&2 "[INFO] This event is a pull request."
 echo >&2 "[INFO] PR SHA: $GITHUB_PULL_REQUEST_SHA"
-echo >&2 "[INFO] PR #: $GITHUB_PULL_REQUEST_NUMBER"
+echo >&2 "[INFO] PR number: $GITHUB_PULL_REQUEST_NUMBER"
 echo >&2 "[INFO] PR branch: $GITHUB_PULL_REQUEST_HEAD_REF"
 
 # The branch $GITHUB_PULL_REQUEST_HEAD_REF is already checked out and built
@@ -109,24 +109,35 @@ $CI_JOB_WEB_URL
 
 
 # WIP
+pwd=$(pwd)
+echo >&2 "[INFO] pwd: ${pwd}"
+
 webpage_ls=$(ls -laH webpage/v/latest)
 echo >&2 "[INFO] ls -laH webpage/v/latest"
 echo >&2 "${webpage_ls}"
+
+mkdir /tmp
 cd webpage/v/latest
 tar -zcvfh /tmp/${GITHUB_PULL_REQUEST_NUMBER}.tar.gz .
+
 tmp_ls=$(ls -la /tmp)
 echo >&2 "[INFO] ls -ls /tmp"
 echo >&2 "${tmp_ls}"
 
 cd ../../..
+
 git stash
 git checkout gh-pages
+
 mkdir -p PR/${GITHUB_PULL_REQUEST_NUMBER}
 tar -zxvf /tmp/${GITHUB_PULL_REQUEST_NUMBER}.tar.gz -C PR/${GITHUB_PULL_REQUEST_NUMBER}
+
 git add PR/${GITHUB_PULL_REQUEST_NUMBER}/*
+
 git_status=$(git status -u)
 echo >&2 "[INFO] git status -u"
 echo >&2 "${git_status}"
+
 git commit -m $MESSAGE
 git push
 
