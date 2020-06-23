@@ -112,6 +112,7 @@ $CI_JOB_WEB_URL
 # WIP
 pwd=$(pwd)
 echo >&2 "[INFO] pwd: ${pwd}"
+pwd
 
 webpage_ls=$(ls -laH webpage/v/latest)
 echo >&2 "[INFO] ls -laH webpage/v/latest"
@@ -138,8 +139,10 @@ git_status=$(git status -u)
 echo >&2 "[INFO] git status -u"
 echo >&2 "${git_status}"
 
+git remote -v
+
 git commit -m "${MESSAGE}"
-git push
+git push --set-upstream origin gh-pages
 
 
 if [ $MANUBOT_DEPLOY_VIA_SSH = "true" ]; then
