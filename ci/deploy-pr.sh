@@ -110,7 +110,7 @@ $CI_JOB_WEB_URL
 
 # LH - June 2020
 
-# Eyeball the workind dir
+# Eyeball the working dir
 pwd
 
 # Eyeball the latest webpage files (-H follow symlink)
